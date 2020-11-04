@@ -1,0 +1,62 @@
+{% extends "producto/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{%block title %} crud {% endblock%}
+
+
+{% block content %}
+    <!--el Aside del HTML-->
+    <aside>
+    </aside>
+    <!--el Section del HTML-->
+    <section>
+      <div class="row">
+        <div class="col s3"></div>
+          <div class="col s6">
+            <fieldset>
+              <legend>Crear Cuenta</legend>
+              <div><div class="section">
+                <form action="añadir_u" method="POST">
+                  <div class="col s6">
+                    <label>Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" onfocus="vaciarN();" onblur="min3();" required></div>
+                <div class="col s6">
+                    <label>Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" onfocus="vaciarA();" onblur="min3v2();" required> </div>
+                <div class="col s6">
+                    <label>Edad:</label>
+                    <input type="number" id="edad" name="edad"  onblur="validarEdad();" required>  </div>
+                <div class="col s6">
+                    <label>E-mail:</label>
+                    <input type="email" id="mail" placeholder="ejemplo@correo.cl" name="mail" required> </div>
+                <div class="col s6">
+                  <label>Confirme su E-mail:</label>
+                    <input type="email" id="c_mail" name="c_mail" onblur="ConMail();" required></div>
+                    <div class="col s6">
+                      <label>Contraseña:</label>
+                      <input type="password" id="pass" name="pass" onblur="min8();" required> </div>
+                  <div class="col s7">
+                    <label>Confirme su Contraseña:</label>
+                      <input type="password" id="c_pass" name="c_pass" onblur="ConPass();" required></div>
+                  <div class="col s12"></div>
+                  <div class="col s12 center">
+                    <input type="submit" name="opcion" onfocus="ConPass(); ConMail(); validarEdad(); min8();min3();min3v2() " value="enviar">
+                  </div>
+                </form>
+                      
+            </div></div>
+
+            </fieldset>
+
+          </div>
+
+
+      </div>
+    </section>
+    <!--el Footer del HTML-->
+{% endblock %}
+
+{% block javascript%}
+        
+{% endblock%}

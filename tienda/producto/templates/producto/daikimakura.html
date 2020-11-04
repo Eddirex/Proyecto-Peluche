@@ -1,0 +1,68 @@
+{% extends "producto/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{%block title %} daikimakura {% endblock%}
+
+
+{% block content %}
+    <!--el Aside del HTML-->
+    <aside >
+
+      <div class="wrap">
+        <div class="store-wrapper"></div>
+        
+          <div class="row">
+            
+            <div>
+              <div class="box2">
+                <h4 class="grey-text text-lighten-3">CATEGORIAS</h4>
+                <div>
+                    <div class="opc"><a href="#" class="category_item grey-text text-lighten-3" category="all">Todo</a></div>
+                    <div class="opc"><a href="#" class="category_item grey-text text-lighten-3 fuente" category="f">P. Femeninos</a></div>
+                    <div class="opc"><a href="#" class="category_item grey-text text-lighten-3" category="m">P. Masculinos</a></div>
+                </div>
+                <!--peluche pequeño es menos a 20cm-->
+                <!--peluche mediano es superior o igual a 20cm e inferior de 40cm-->
+                <!--peluche grande superior a 40 cm-->
+      
+              </div>
+            </div>
+            <div class="col s3"></div>
+
+            <div class="col s9">
+
+              <div class="product-item box3" category="m">
+                <div class="card white left" style="height: 320px; width: 200px;">
+                  <div class="card-image">
+                    <img class="materialboxed" src="imagenes/producto3/zenitsu.webp" alt="" style="height: 200px; width: 200px;">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Zenitsu</span>
+                    <span>  </span>
+                    <p><a href="#">$18.990</a></p>
+                  </div>
+              </div>              
+              </div>
+
+            </div>
+
+        </div>
+      </div>
+        
+    </aside>
+    <!--el Section del HTML-->
+    <section>
+      <div class="parallax-container z50">
+        <div class="parallax">
+            <img src="{% static 'imagen/largas/dakiv2.jpg' %}"  alt="">
+        </div>
+    </div>
+    </section>
+
+    <!--el Footer del HTML-->
+    {% endblock %}
+
+    {% block javascript%}
+        
+    {% endblock%}

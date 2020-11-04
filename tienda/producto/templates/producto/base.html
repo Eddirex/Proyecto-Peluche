@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=i, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+
+    <script src="ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <link href="fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  />
+    <link rel="stylesheet" href="{% static 'css/diseño.css' %}">
+</head>
+<body>
+    <!--el Header del HTML-->
+    <header>
+      <div>
+        <h5 class="center">Kawaii Sotto</h5>
+      </div>
+
+    </header>
+    <!--el NAV del HTML-->
+    <nav>
+        <div class="nav-wrapper moradito">
+            <ul class="left hide-on-med-and-down">
+              {% if user.username == 'edmundo' %}
+              <li><a href="http://127.0.0.1:8000/producto/crud">crud</a></li>
+              {% else %}
+              <li><a href="http://127.0.0.1:8000/producto/index">Inicio</a></li>
+              {% endif %}
+              <li><a href="http://127.0.0.1:8000/producto/peluche">Peluches</a></li>
+              <li><a href="http://127.0.0.1:8000/producto/almohada">Almohadas</a></li>
+              <li><a href="http://127.0.0.1:8000/producto/daikimakura">Daikimakuras</a></li>
+            </ul>
+            <ul class="right hide-on-med-and-down">              
+              {% if user.is_authenticated %}
+              <li><a href="http://127.0.0.1:8000/accounts/logout">Cerrar Secion</a></li>
+              {% else %}
+              <li><a href="http://127.0.0.1:8000/accounts/login/">Inicie sesión</a></li>
+              {% endif %}
+              <li><a href="http://127.0.0.1:8000/accounts/register/">Crear cuenta</a></li>
+            </ul>
+
+          </div>
+
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+    <!--el Footer del HTML-->
+    <footer class="page-footer moradito z50">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5>SOBRE KAWAII SOTTO</h5>
+              <p class="grey-text text-lighten-4"></p>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Trabaja con nosotros</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Representante Legal</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Términos y condiciones</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Política de privacidad</a></li>
+              </ul>     
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Nuestras Redes Sociales</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3 centerV" href="#!"><img src="{% static 'imagen/logo/facebook.png' %}" alt="" style="height: 32px; width: 32px;">Facebook</a></li>
+                <li><a class="grey-text text-lighten-3 centerV" href="#!"><img src="{% static 'imagen/logo/instagram.png' %}" alt="" style="height: 32px; width: 32px;"> instagram</a></li>
+                <li><a class="grey-text text-lighten-3 centerV" href="#!"><img src="{% static 'imagen/logo/twitter.png' %}" alt="" style="height: 32px; width: 32px;">Twitter</a></li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            Copyright © 2018-2020 Kawaii Soto ltda.
+            <br>
+          <a class="grey-text text-lighten-4">Av. Mi imaginacion 323</a>
+          </div>
+        </div>
+      </footer>
+  
+      <script src="{%  static 'js/materialize.min.js' %}"></script>
+      <!-- Compiled and minified JavaScript -->
+      <script src="cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+      <script src="{%  static 'js/scriptPropio.js' %}"></script> 
+    {% block javascript%}
+
+    {% endblock%}
+</body>
+</html>

@@ -1,0 +1,139 @@
+{% extends "producto/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{%block title %} crud {% endblock%}
+
+
+{% block content %}
+<aside >
+
+    <div class="wrap">
+      <div class="store-wrapper"></div>
+      {% if user.username == 'edmundo' %}   
+      
+        <div class="row">
+          
+          <div>
+            <div class="box2">
+              <h4 class="grey-text text-lighten-3 center">OPCIONES</h4>
+              <div>
+                  <div class="opc"><a href="añadir" >Añadir Producto</a></div>
+                  <div class="opc"><a href="listar_todo" >listar producto</a></div>
+              </div>
+
+    
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s3"></div>
+              <div class="col s6">
+                <fieldset>
+                  <legend>Modificar o Eliminar Peluche</legend>
+                  <div><div class="section">
+
+                    <form action="mod_del" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="id" value="{{peluche.id_peluche}}" readonly>
+                    <div class="col s6">
+                        <label>Nombre Peluche:</label>
+                        <input type="text" name="nombre_peluche" value="{{ peluche.nombre_peluche}}" required></div>
+
+                    <div class="col s6">
+                        <label>Medidas:</label>
+                        <input type="text" name="medida" placeholder="mmxmmxmm"value="{{ peluche.medida}}" required> </div>
+
+                    <div class="col s6">
+                        <label>Precio:</label>
+                        <input type="number" name="precio" value="{{ peluche.precio}}" required>  </div>
+
+                    <div class="col s6">
+                        <label>Tamaño:</label>
+                        <select name="tamano">
+                            <option value="Seleccionar" disabled>Seleccionar</option>
+                            {% if peluche.tamano ==  1 %}
+                              <option value="1" selected>pequeño</option>
+                            {% else %}
+                              <option value="1">pequeño</option>
+                            {% endif %}
+                            {% if peluche.tamano == 2 %}
+                              <option value="2" selected>mediano</option>
+                            {% else %}
+                              <option value="2">mediano</option>
+                            {% endif %}
+                            {% if peluche.tamano == 3 %}
+                              <option value="3" selected>grande</option>
+                            {% else %}
+                              <option value="3">grande</option>
+                            {% endif %}
+                        </select></div>
+                        
+                    <div class="col s6">
+                      <label>Foto:</label>        
+                        <input type="file" name="foto" value="{{peluche.foto}}" /></div>
+                        
+                        <div class="col s6">
+                          <label>Estado:</label>
+                          <select name="activo">
+                            <option value="Seleccionar" disabled>Seleccionar</option>
+                            {% if peluche.activo == 1 %}
+                              <option value="1" selected>>activado</option>
+                            {% else %}
+                              <option value="1">activado</option>
+                            {% endif %}
+                            {% if peluche.activo == 0 %}
+                              <option value="0" selected>>desactivado</option>
+                            {% else %}
+                              <option value="0">desactivado</option>
+                            {% endif %}
+                        </select></div>
+
+                      <div class="col s12"></div>
+                      <div class="col s6 center">
+                        <input type="submit" name="boton" value="eliminar">
+                      </div>
+                      <div class="col s6 center">
+                        <input type="submit" name="boton" value="modificar">
+                      </div>
+                    </form>
+                          
+                </div></div>
+    
+                </fieldset>
+    
+              </div>
+    
+    
+          </div>
+    </div>
+    </div>
+    {% else %}
+    <div class="center">
+      <h6>usted no tiene permisos para la administracion</h6>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+    </div>
+    {% endif %}
+      
+  </aside>
+
+{% endblock %}
+
+{% block javascript%}
+    
+{% endblock%}

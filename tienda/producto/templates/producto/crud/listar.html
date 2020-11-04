@@ -1,0 +1,81 @@
+{% extends "producto/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{%block title %} crud {% endblock%}
+
+
+{% block content %}
+<aside >
+
+    <div class="wrap">
+      <div class="store-wrapper"></div>
+      {% if user.username == 'edmundo' %}    
+        <div class="row">
+          
+          <div>
+            <div class="box2">
+              <h4 class="grey-text text-lighten-3 center">OPCIONES</h4>
+              <div>
+                <div class="opc"><a href="añadir" >Añadir Producto</a></div>
+                <div class="opc"><a href="listar_todo" >listar producto</a></div>
+              </div>
+
+    
+            </div>
+          </div>
+          <div class="col s3"></div>
+
+          <div class="col s9">
+
+            {% for peluche in listado %}
+            <form action="eliminar_modificar" method="POST" >
+                {% csrf_token %}
+            <div class="product-item box3">
+              <div class="card white left" style="height: 400px; width: 200px;">
+                <div class="card-image" >
+                  <img class="" src="{{peluche.foto.url}}" alt="" style="height: 200px; width: 200px;">
+                </div>
+                <div class="card-content">
+                    <input type="text" class="z1" name="id" value="{{peluche.id_peluche}}" readonly>
+                  <span class="card-title activator grey-text text-darken-4" >{{ peluche.nombre_peluche}} </span>             
+                  <span>{{peluche.medida}}</span>
+                  <p><a>$ {{peluche.precio}}</a></p>
+                  <input type="submit" name="opcion" value="modificar/eliminar"></form>
+                </div>
+            </div>              
+            </div>
+
+            {% endfor %}
+          </div>
+    </div>
+    </div>
+    {% else %}
+    <div class="center">
+      <h6>usted no tiene permisos para la administracion</h6>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+    </div>
+    {% endif %}
+      
+  </aside>
+
+{% endblock %}
+
+{% block javascript%}
+    
+{% endblock%}

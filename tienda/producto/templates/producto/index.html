@@ -1,0 +1,83 @@
+{% extends "producto/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{%block title %} inicio {% endblock%}
+
+{% block content %}
+    <!--el Aside del HTML-->
+    <aside>
+      <div class="row">
+        <div class="box">
+          <h2 class="center">¿Por que Kawaii Sotto?</h2>
+        </div>
+        <div class="col s1"></div>
+        <div class="col s10">
+          <h6>
+            Elegimos nuestro nombre de Kawaii Sotto porque kawaii significa lindo y esa es la lindura que queremos transmitir en todos nuestros productos. Y Sotto significa suavecito, a quien no le gustan las cosas suaves, a nosotros nos encantan las cosas suaves y como empresa queremos vender los productos más lindos y suaves a todos nuestros clientes, además tenemos una gran variedad de productos traídos de lugares como Asia, Japón, entre otros lugares y sin olvidar los productos nacionales porque queremos tener al menos un producto que le encante a cada persona.
+        </h6></div>
+
+      </div>     
+    </aside>
+    <!--el Section del HTML-->
+    <section>
+      <!--2do row que tiene el slides-->
+      <div class="row">
+        <div class="col s1"></div>
+
+        <div class="col s10">
+          <div class="slider">
+            <ul class="slides">
+              <li>
+                <img src="{% static 'imagen/largas/3dogs.jpg' %}" alt="" > <!-- random image -->
+                  <div class="caption left-align down">
+                      <h1 class="text">Tenemos a los mas lindos</h1>
+                    </div>
+              </li>
+              <li>
+                <img src="{% static 'imagen/largas/perropeluche.jpg' %}" alt=""> 
+                    <div class="caption center-align">
+                      <h1 class="white-text">y tiernos peluches</h1>
+                    </div>
+              </li>
+              <li>
+                <img src="{% static 'imagen/largas/pikachus.jpg' %}" alt="">
+                  <div class="caption right-align">
+                    <h1 class="white-text">Atrápalos a Todos</h1>
+                  </div>
+              </li>     
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="box">
+        <h2 class="center">¿Por que comprar un peluche?</h2>       
+      </div>
+      <div class="row">
+        <div class="col s1"></div>
+        <div class="col s10">
+          <h6>
+            Hay muchos motivos para comprar uno, los puedes comprar para regalarle a alguien especial, simplemente para regalarlo en una festividad, sea cumpleaños, boda, aniversario y sobre todo en san Valentín. también si eres un fanático, puedes llegar a coleccionar peluches. Además, hay veces en que un peluche puede ser el mejor amigo de un niño, porque el peluche hace que no se sienta solo, le genera seguridad, le ayuda a divertirse, entre otras muchas cosas. No olvides que todos somos niños en el fondo.
+
+          </h6></div>
+
+      </div>
+
+
+      <div class="col s1"></div>
+      <div></div>
+
+        <div class="parallax-container">
+          <div class="parallax">
+              <img src="{% static 'imagen/largas/3dogs.jpg' %}" alt="">
+          </div>
+      </div>
+    </section>
+    <!--el Footer del HTML-->
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock%}

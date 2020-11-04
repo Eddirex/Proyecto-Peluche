@@ -1,0 +1,65 @@
+{% extends "producto/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{%block title %} crud {% endblock%}
+
+
+{% block content %}
+<aside >
+
+    <div class="wrap">
+      <div class="store-wrapper"></div>
+      {% if user.username == 'edmundo' %}  
+      
+        <div class="row">
+          
+          <div>
+            <div class="box2">
+              <h4 class="grey-text text-lighten-3 center">OPCIONES</h4>
+              <div>
+                <div class="opc"><a href="añadir" >Añadir Producto</a></div>
+                <div class="opc"><a href="listar_todo" >listar producto</a></div>
+              </div>
+
+    
+            </div>
+          </div>
+          <div class="col s3"></div>
+          <div class="col s9">
+            <h6>Para eliminar y/o modificar productos primero debe seleccionar listar en las opciones que se ven en la izquierda.</h6>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            .
+
+
+    </div>
+    </div>
+    {% else %}
+    <div class="center">
+      <h6>usted no tiene permisos para la administracion</h6>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+    </div>
+    {% endif %}
+      
+  </aside>
+
+{% endblock %}
+
+{% block javascript%}
+    
+{% endblock%}

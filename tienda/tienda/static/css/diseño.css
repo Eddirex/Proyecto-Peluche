@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+.box {
+  width: 94%;
+  border: 15px solid #372e52;
+  padding: 1px;
+  border-radius: 20px;
+  float: left;
+  margin: 35px;
+}
+
+.box2 {
+  width: auto;
+  height: auto;
+  border: 15px solid #372e52;
+  background-color: #6E658B;
+  padding: 1px;
+  float: left;
+  margin: 35px;
+  position: fixed;
+  z-index: 1;
+}
+
+/* caja invisible para almacenar productos y darle una separacion*/
+.box3{
+  width: auto;
+  height: auto;
+  float: left;
+  margin: 15px;
+
+
+}
+
+.z50{
+  z-index: 50;
+}
+.z1{
+  z-index: 1;
+}
+
+.fuente{
+  font-family:'Open Sans';
+}
+
+.opc {
+  display: block;
+	width: 90%;
+	padding: 15px 0;
+  margin-bottom: 20px;
+  margin: 10px;
+	background: #170E33;
+
+	text-align: center;
+	text-decoration: none;
+  color: #fff;
+}
+
+.moradito {
+    background-color:  #372e52;
+}
+
+.centerV{
+  display: flex;
+  align-items: center;
+}
+
+.centerV{
+  display: flex;
+  align-items: center;
+}
+
+.down{
+  display: flex;
+  align-items: down;
+}
+
+.product{
+  height: 200px; width: 200px;
+
+}

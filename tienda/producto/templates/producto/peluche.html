@@ -1,0 +1,68 @@
+{% extends "producto/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{%block title %} peluches {% endblock%}
+
+{% block content %}
+    <!--el Aside del HTML-->
+    <aside >
+
+      <div class="wrap">
+        <div class="store-wrapper"></div>
+        
+          <div class="row">
+            
+            <div>
+              <div class="box2">
+                <h4 class="grey-text text-lighten-3">CATEGORIAS</h4>
+                <div>
+                    <div class="opc"><a href="peluche" >Todo</a></div>
+                    <div class="opc"><a href="peluche_pequeño" >Peluches pequeños</a></div>
+                    <div class="opc"><a href="peluche_mediano" >peluches medianos</a></div>
+                    <div class="opc"><a href="peluche_grande" >peluches grandes</a></div>
+                </div>
+                <!--peluche pequeño es menos a 20cm-->
+                <!--peluche mediano es superior o igual a 20cm e inferior de 40cm-->
+                <!--peluche grande superior a 40 cm-->
+      
+              </div>
+            </div>
+            <div class="col s3"></div>
+
+            <div class="col s9">
+
+              {% for peluche in listado %}
+              <div class="product-item box3">
+                <div class="card white left" style="height: 320px; width: 200px;">
+                  <div class="card-image">
+                    <img class="materialboxed" src="{{peluche.foto.url}}" alt="" style="height: 200px; width: 200px;">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{ peluche.nombre_peluche}}</span>
+                    <span>{{peluche.medida}}</span>
+                    <p><a>$ {{peluche.precio}}</a></p>
+                  </div>
+              </div>              
+              </div>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+        
+    </aside>
+    <!--el Section del HTML-->
+    <section>
+      <div class="parallax-container z50">
+        <div class="parallax">
+            <img src="{% static 'imagen/largas/3akita.jpg' %}" alt="">
+        </div>
+    </div>
+  </section>
+
+    <!--el Footer del HTML-->
+{% endblock %}
+
+{% block javascript%}
+    
+{% endblock%}
